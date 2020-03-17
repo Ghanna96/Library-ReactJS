@@ -1,11 +1,17 @@
 import React from 'react';
 
-const Header = () => {
+const Header = props => {
 	return (
 		<header>
-			<div id='header'>
+			<div className='bg-dark text-white'>
 				<h1>my Library</h1>
-				<button id='spawn'>Add book</button>
+				<button
+					className='btn btn-secondary btn-lg'
+					onClick={() => {
+						props.formSwap();
+					}}>
+					Add book
+				</button>
 			</div>
 		</header>
 	);

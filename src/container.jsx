@@ -8,7 +8,7 @@ function Container(props) {
 	));
 	//console.log(books);
 	return (
-		<table className='table '>
+		<table className='table table-dark '>
 			<thead>
 				<tr>
 					<th>Title</th>

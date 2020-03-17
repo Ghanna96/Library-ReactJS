@@ -37,7 +37,7 @@ class App extends Component {
 		const library = [...this.state.library];
 		return (
 			<div className='App'>
-				<Header />
+				<Header formSwap={this.handleForm} />
 				<Form
 					onSubmit={this.handleSubmit}
 					onChange={this.handleChange}

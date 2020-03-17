@@ -17,9 +17,6 @@ class Form extends Component {
 					<div className='modal-content'>
 						<div className='modal-header'>
 							<h4 className='modal-title'>New Book</h4>
-							<button type='button' className='close' data-dismiss='modal'>
-								&times;
-							</button>
 						</div>
 						<form
 							onSubmit={e => {
@@ -48,7 +45,11 @@ class Form extends Component {
 							</div>
 
 							<div className='modal-footer'>
-								<input type='submit' value='Submit' />
+								<input
+									type='submit'
+									value='Submit'
+									className='btn btn-success'
+								/>
 								<button
 									type='button'
 									className='btn btn-danger'
@@ -69,17 +70,7 @@ class Form extends Component {
 		//  const { title, author, pages } = currentValues;
 		console.log(this.props.formShow);
 
-		return (
-			<React.Fragment>
-				<button
-					onClick={() => {
-						this.props.formSwap();
-					}}>
-					AAA
-				</button>
-				<div>{this.props.formShow && this.renderForm()}</div>
-			</React.Fragment>
-		);
+		return <div>{this.props.formShow && this.renderForm()}</div>;
 	}
 }
 
