@@ -3,8 +3,10 @@ import React from 'react';
 const Header = () => {
 	return (
 		<header>
-			<h1>my Library</h1>
-			<button className=''>Add book</button>
+			<div id='header'>
+				<h1>my Library</h1>
+				<button id='spawn'>Add book</button>
+			</div>
 		</header>
 	);
 };

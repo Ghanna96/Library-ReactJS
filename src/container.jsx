@@ -2,10 +2,11 @@ import React from 'react';
 import Book from './books';
 
 function Container(props) {
-	const books = [
-		{ title: 'Harry Potter', author: 'Rowling', pages: '256' },
-		{ title: 'Lord Of The Rings', author: 'Tolkien', pages: '500' }
-	];
+	const { library } = props;
+	const books = library.map((obj, i) => (
+		<Book key={i} title={obj.title} author={obj.author} pages={obj.pages} />
+	));
+	//console.log(books);
 	return (
 		<table className='table '>
 			<thead>
@@ -15,16 +16,7 @@ function Container(props) {
 					<th>Pages</th>
 				</tr>
 			</thead>
-			<tbody>
-				{books.map((obj, i) => (
-					<Book
-						key={i}
-						title={obj.title}
-						author={obj.author}
-						pages={obj.pages}
-					/>
-				))}
-			</tbody>
+			<tbody>{books}</tbody>
 		</table>
 	);
 }
