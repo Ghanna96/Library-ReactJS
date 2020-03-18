@@ -8,7 +8,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			form: { title: '', author: '', pages: '', read: '' },
+			form: { title: '', author: '', pages: '', read: false },
 			library: [],
 			showForm: false
 		};
@@ -33,6 +33,12 @@ class App extends Component {
 		});
 		console.log('books:', this.state.library);
 	};
+	handleStatus = i => {
+		const updateBook = this.state.library;
+		updateBook[i].read = !updateBook[i].read;
+		console.log(updateBook[i].read);
+		this.setState({ library: updateBook });
+	};
 	render() {
 		const library = [...this.state.library];
 		return (
@@ -45,7 +51,7 @@ class App extends Component {
 					formSwap={this.handleForm}
 					formShow={this.state.showForm}
 				/>
-				<Container library={library} />
+				<Container library={library} changeStatus={this.handleStatus} />
 			</div>
 		);
 	}
