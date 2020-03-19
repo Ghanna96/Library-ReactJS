@@ -30,21 +30,25 @@ class Form extends Component {
 									type='text'
 									name='title'
 									value={title}
-									onChange={onChange}></input>
+									onChange={onChange}
+									required></input>
 								<span>Author :</span>
 								<input
 									className='form-control bg-dark text-white'
 									type='text'
 									name='author'
 									value={author}
-									onChange={onChange}></input>
+									onChange={onChange}
+									required></input>
 								<span>Pages :</span>
 								<input
 									className='form-control bg-dark text-white'
 									type='text'
 									name='pages'
 									value={pages}
-									onChange={onChange}></input>
+									onChange={onChange}
+									required
+									pattern='\d+'></input>
 							</div>
 
 							<div className='modal-footer'>

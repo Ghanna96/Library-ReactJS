@@ -20,7 +20,6 @@ class App extends Component {
 		const formData = Object.assign(this.state.form);
 		formData[e.target.name] = e.target.value;
 		this.setState({ form: formData });
-		//console.log(this.state.form);
 	};
 	handleSubmit = e => {
 		e.preventDefault();
@@ -39,6 +38,11 @@ class App extends Component {
 		console.log(updateBook[i].read);
 		this.setState({ library: updateBook });
 	};
+	handleRemove = i => {
+		const updateBook = this.state.library.slice();
+		updateBook.splice(i, 1);
+		this.setState({ library: updateBook });
+	};
 	render() {
 		const library = [...this.state.library];
 		return (
@@ -51,7 +55,11 @@ class App extends Component {
 					formSwap={this.handleForm}
 					formShow={this.state.showForm}
 				/>
-				<Container library={library} changeStatus={this.handleStatus} />
+				<Container
+					library={library}
+					changeStatus={this.handleStatus}
+					remove={this.handleRemove}
+				/>
 			</div>
 		);
 	}

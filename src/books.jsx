@@ -8,15 +8,29 @@ class Book extends Component {
 		return this.props.status ? 'badge badge-success' : 'badge badge-danger';
 	};
 	render() {
-		const { title, author, pages, changeStatus } = this.props;
+		const {
+			title,
+			author,
+			pages,
+			changeStatus,
+			index,
+			removeBook
+		} = this.props;
 
 		return (
 			<tr>
+				<th scope='row'> {index}</th>
 				<td>{title}</td>
 				<td>{author}</td>
 				<td>{pages}</td>
-				<td className={this.getClass()} onClick={changeStatus}>
-					{this.status()}
+				<td onClick={changeStatus}>
+					<span className={this.getClass()}>{this.status()}</span>
+				</td>
+				<td>
+					<button className='btn btn-warning' onClick={removeBook}>
+						{' '}
+						Delete
+					</button>
 				</td>
 			</tr>
 		);
