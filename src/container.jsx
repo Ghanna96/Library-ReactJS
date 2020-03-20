@@ -6,7 +6,7 @@ function Container(props) {
 	const books = library.map((obj, i) => (
 		<Book
 			key={i}
-			index={i + 1}
+			index={i}
 			title={obj.title}
 			author={obj.author}
 			pages={obj.pages}
@@ -15,7 +15,7 @@ function Container(props) {
 				changeStatus(i);
 			}}
 			removeBook={() => {
-				remove(i);
+				remove(obj.title);
 			}}
 		/>
 	));
