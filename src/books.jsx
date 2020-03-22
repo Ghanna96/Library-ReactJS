@@ -5,7 +5,9 @@ class Book extends Component {
 		return this.props.status ? 'Yes' : 'No';
 	};
 	getClass = () => {
-		return this.props.status ? 'badge badge-success' : 'badge badge-danger';
+		return this.props.status
+			? 'btn badge badge-success'
+			: 'btn badge badge-danger';
 	};
 	render() {
 		const {
